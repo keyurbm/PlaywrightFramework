@@ -44,6 +44,7 @@ test('POST - create a user', async ({ apiHelper }) => {
 test('PUT - update a user', async ({ apiHelper }) => {
     //create a user: POST
     let userResponse = await createUser(apiHelper);
+    
     let userUpdatedData = {
         name: 'Keyur API Updated',
         status: 'inactive'
