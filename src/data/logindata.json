@@ -1,0 +1,14 @@
+[
+    {
+        "username": "kaysmakwana1@gmail.com",
+        "password": "kbm@123kbm"
+    },
+    {
+        "username": "invalid@test.com",
+        "password": "wrongpassword"
+    },
+    {
+        "username": "test@test.com",
+        "password": "kbm@123kbm"
+    }
+]
