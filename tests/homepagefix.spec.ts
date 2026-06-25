@@ -1,11 +1,8 @@
-
-
 import { expect, test } from '../src/fixtures/pagefixtures';
-
 
 test.beforeEach(async ({ loginPage }) => {
     await loginPage.goToLoginPage();
-    await loginPage.doLogin('pwtestbatch@open.com', 'pw123');
+    await loginPage.doLogin('kaysmakwana@gmail.com', 'kbm@123kbm');
 });
 
 test('home page title test', async ({ homePage }) => {
@@ -14,11 +11,9 @@ test('home page title test', async ({ homePage }) => {
     expect(pageTitle).toBe('My Account');
 });
 
-
 test('logout link exist test', async ({ homePage }) => {
     expect(await homePage.isLogoutLinkExist()).toBeTruthy();
 });
-
 
 test('home page headers exist test', async ({ homePage }) => {
     let allHeaders = await homePage.getHomePageHeaders();

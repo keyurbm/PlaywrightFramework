@@ -1,10 +1,8 @@
 
 
-import { test, expect } from '@playwright/test';
-import { LoginPage } from '../src/pages/LoginPage';
+import { expect, test } from '@playwright/test';
 import { HomePage } from '../src/pages/HomePage';
-
-
+import { LoginPage } from '../src/pages/LoginPage';
 
 let loginPage: LoginPage;
 let homePage: HomePage;
@@ -12,7 +10,7 @@ let homePage: HomePage;
 test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page);
     await loginPage.goToLoginPage();
-    await loginPage.doLogin('pwtestbatch@open.com', 'pw123');
+    await loginPage.doLogin('kaysmakwana@gmail.com', 'kbm@123kbm');
     homePage = new HomePage(page);
 });
 
@@ -22,11 +20,9 @@ test('home page title test', async () => {
     expect(pageTitle).toBe('My Account');
 });
 
-
 test('logout link exist test', async () => {
     expect(await homePage.isLogoutLinkExist()).toBeTruthy();
 });
-
 
 test('home page headers exist test @junesprint', async () => {
     let allHeaders = await homePage.getHomePageHeaders();

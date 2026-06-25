@@ -4,8 +4,8 @@
 //npm install ajv
 
 
-import { test, expect } from '../../src/fixtures/apifixtures';
 import Ajv from 'ajv';
+import { expect, test } from '../../src/fixtures/apifixtures';
 
 let TOKEN = process.env.API_Token;
 let AUTH_HEADER = { Authorization: `Bearer ${TOKEN}` };
@@ -42,13 +42,10 @@ let userSchema = {
     ]
 };
 
-
 let userArraysSchema = {
     "type": "array",
     "items": userSchema
 };
-
-
 
 test('GET -- get a user', async ({ apiHelper }) => {
 
@@ -58,7 +55,6 @@ test('GET -- get a user', async ({ apiHelper }) => {
         gender: 'male',
         status: 'active'
     };
-
 
     //post -- create a user
     let createResponse = await apiHelper.post("/public/v2/users", userData, AUTH_HEADER);
@@ -79,7 +75,6 @@ test('GET -- get a user', async ({ apiHelper }) => {
     expect(isSchemaValid).toBeTruthy();
 
 });
-
 
 test('GET -- get all users', async ({ apiHelper }) => {
 

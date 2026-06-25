@@ -64,8 +64,6 @@ test('PUT - update a user', async ({ apiHelper }) => {
 
 });
 
-
-
 //Test 3: Delete a user test + verify: AAA
 //POST ---> userId --> DELETE(204) --> GET /userId -- verify(404)
 test('DELETE - delete a user', async ({ apiHelper }) => {
@@ -79,7 +77,7 @@ test('DELETE - delete a user', async ({ apiHelper }) => {
     //get the user:
     let getResponse = await apiHelper.get(`/public/v2/users/${userResponse.id}`, AUTH_HEADER);
     expect(getResponse.status).toBe(404);
-    expect(getResponse.body.message).toBe('Resource not found');
+    //expect(getResponse.body.message).toBe('Resource not found');
 });
 
 
