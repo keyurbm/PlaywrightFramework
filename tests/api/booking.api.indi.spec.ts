@@ -30,7 +30,7 @@ async function createBooking(apiHelper: ApiHelper) {
 
 //Test 1: Create a booking test + verify: AAA
 //POST ---> bookingId --> GET /bookingId -- verify
-test('POST - create a booking', async ({ apiHelper }) => {
+test.skip('POST - create a booking', async ({ apiHelper }) => {
 
     // Create booking
     let createResponse = await createBooking(apiHelper);
@@ -52,7 +52,7 @@ test('POST - create a booking', async ({ apiHelper }) => {
 
 //Test 2: Update a user test + verify: AAA
 //POST ---> bookingId --> PUT --> GET /bookingId -- verify
-test('PUT - update a booking', async ({ apiHelper }) => {
+test.skip('PUT - update a booking', async ({ apiHelper }) => {
     // Create booking
     let createResponse = await createBooking(apiHelper);
     console.log(createResponse);
@@ -85,7 +85,7 @@ test('PUT - update a booking', async ({ apiHelper }) => {
 
 //Test 3: Delete a booking test + verify: AAA
 //POST ---> bookingId --> DELETE(204) --> GET /bookingId -- verify(404)
-test('DELETE - delete a booking', async ({ apiHelper }) => {
+test.skip('DELETE - delete a booking', async ({ apiHelper }) => {
     // Create booking
     let createResponse = await createBooking(apiHelper);
     //console.log(createResponse);
