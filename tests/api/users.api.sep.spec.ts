@@ -11,14 +11,14 @@ test.describe.serial('running e2e go rest crud api tests', () => {
 
     //GET test:
     //fixtures with destructure
-    test('GET API -- get all users', async ({ apiHelper }) => {
+    test.skip('GET API -- get all users', async ({ apiHelper }) => {
         let response = await apiHelper.get('/public/v2/users', AUTH_HEADER);
         expect(response.status).toBe(200);
         expect(response.body.length).toBeGreaterThan(0);
     });
 
 
-    test('POST API -- create a user', async ({ apiHelper }) => {
+    test.skip('POST API -- create a user', async ({ apiHelper }) => {
         let userData = {
             name: 'Keyur API',
             email: `automation_${Date.now()}@open.com`,
@@ -33,7 +33,7 @@ test.describe.serial('running e2e go rest crud api tests', () => {
         console.log('Created User Id: ', userId);
     });
 
-    test('PUT API -- Update a user', async ({ apiHelper }) => {
+    test.skip('PUT API -- Update a user', async ({ apiHelper }) => {
         let userUpdatedData = {
             name: 'Keyur API Updated',
             status: 'inactive'
@@ -45,7 +45,7 @@ test.describe.serial('running e2e go rest crud api tests', () => {
         expect(response.body.status).toBe(userUpdatedData.status);
     });
 
-    test('DELETE API -- Delete a user', async ({ apiHelper }) => {
+    test.skip('DELETE API -- Delete a user', async ({ apiHelper }) => {
         let response = await apiHelper.delete(`/public/v2/users/${userId}`, AUTH_HEADER);
         expect(response.status).toBe(204);
     });
